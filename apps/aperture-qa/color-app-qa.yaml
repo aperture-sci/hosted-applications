@@ -1,0 +1,26 @@
+# map hosted stagom to US West to avoid conflict
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hosted-color-qa
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/manifest-generate-paths: /manifests/color/aperture-qa
+    codefresh.io/product: color-app
+spec:
+  destination:
+    name: 'kc-v-usw'
+    namespace: qa
+  source:
+    path: manifests/color/aperture-qa
+    repoURL: 'https://github.com/aperture-sci/DevOps'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
