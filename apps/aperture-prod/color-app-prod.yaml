@@ -11,7 +11,7 @@ metadata:
     codefresh.io/product: color-app
 spec:
   destination:
-    name: 'kc-v-usw'
+    name: 'kc-v-use'
     namespace: prod
   source:
     path: manifests/color/aperture-prod
