@@ -1,4 +1,4 @@
-# map hosted stagom to US West to avoid conflict
+# map hosted QA env to US West cluster to avoid conflict
 
 apiVersion: argoproj.io/v1alpha1
 kind: Application
