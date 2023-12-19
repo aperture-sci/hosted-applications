@@ -1,19 +1,20 @@
-# mapping hosted staging to EU to avoid conflict
+# map hosted Prod env to US East cluster to avoid conflict
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hosted-color-staging
+  name: hosted-color-prod
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd.argoproj.io/manifest-generate-paths: /manifests/color/aperture-staging
+    argocd.argoproj.io/manifest-generate-paths: /manifests/color/aperture-prod
     codefresh.io/product: color-app
 spec:
   destination:
-    name: 'target-eu'
-    namespace: staging
+    name: 'kc-v-usw'
+    namespace: prod
   source:
-    path: manifests/color/aperture-staging
+    path: manifests/color/aperture-prod
     repoURL: 'https://github.com/aperture-sci/DevOps'
     targetRevision: HEAD
   project: default
