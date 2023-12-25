@@ -1,5 +1,4 @@
 # map hosted Prod env to US East cluster to avoid conflict
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
