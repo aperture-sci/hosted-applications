@@ -1,5 +1,4 @@
 # mapping hosted staging to EU to avoid conflict
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -8,7 +7,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/manifest-generate-paths: /manifests/color/aperture-staging
-    codefresh.io/product: color-app
+    codefresh.io/product: hosted-color
 spec:
   destination:
     name: 'target-eu'

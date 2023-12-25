@@ -1,5 +1,4 @@
 # map hosted QA env to US West cluster to avoid conflict
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -8,7 +7,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/manifest-generate-paths: /manifests/color/aperture-qa
-    codefresh.io/product: color-app
+    codefresh.io/product: hosted-color
 spec:
   destination:
     name: 'kc-v-usw'
